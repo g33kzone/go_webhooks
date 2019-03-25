@@ -12,7 +12,7 @@ var router *gin.Engine
 func main() {
 	router = gin.Default()
 	initializeRoutes()
-	router.Run(":8000")
+	router.Run("0.0.0.0:8080")
 }
 
 func initializeRoutes() {
