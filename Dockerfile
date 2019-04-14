@@ -4,7 +4,7 @@
  # First stage: build the executable.
  FROM golang:${GO_VERSION}-alpine AS builder
 
- FROM golang:1.12
+ #FROM golang:1.12
 
  RUN apk update && apk add git
 
