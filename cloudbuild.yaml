@@ -1,7 +1,14 @@
 steps:
 - name: 'gcr.io/cloud-builders/go'
-  args: ['install', '.']
+  args: ['generate']
   env: ['PROJECT_ROOT=github.com/g33kzone/go_webhooks']
 - name: 'gcr.io/cloud-builders/go'
-  args: ['build', 'go_webhooks']
+  args: ['test', './...']
   env: ['PROJECT_ROOT=github.com/g33kzone/go_webhooks']
+- name: 'gcr.io/cloud-builders/go'
+  args: ['install', '-a', '-ldflags', "'-s'", '-installsuffix', 'cgo', 'github.com/g33kzone/go_webhooks']
+  env: [
+    'PROJECT_ROOT=github.com/g33kzone/go_webhooks',
+    'CGO_ENABLED=0',
+    'GOOS=linux'
+  ]  
