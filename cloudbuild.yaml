@@ -1,7 +1,7 @@
 steps:
 - name: 'gcr.io/cloud-builders/go'
   args: ['install', '.']
-  env: ['PROJECT_ROOT=devops-deliver']
+  env: ['PROJECT_ROOT=github.com/g33kzone/go_webhooks']
 - name: 'gcr.io/cloud-builders/go'
   args: ['build', 'go_webhooks']
-  env: ['PROJECT_ROOT=devops-deliver']
+  env: ['PROJECT_ROOT=github.com/g33kzone/go_webhooks']

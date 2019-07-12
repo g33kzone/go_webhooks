@@ -1,4 +1,4 @@
-module go_webhooks
+module github.com/g33kzone/go_webhooks
 
 go 1.12
 
