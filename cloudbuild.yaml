@@ -3,9 +3,6 @@ steps:
   args: ['generate']
   env: ['PROJECT_ROOT=github.com/g33kzone/go_webhooks']
 - name: 'gcr.io/cloud-builders/go'
-  args: ['test', './...']
-  env: ['PROJECT_ROOT=github.com/g33kzone/go_webhooks']
-- name: 'gcr.io/cloud-builders/go'
   args: ['install', '-a', '-ldflags', "'-s'", '-installsuffix', 'cgo', 'github.com/g33kzone/go_webhooks']
   env: [
     'PROJECT_ROOT=github.com/g33kzone/go_webhooks',
